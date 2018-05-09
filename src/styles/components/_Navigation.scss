@@ -1,0 +1,15 @@
+.Navigation {
+  &__list {
+    display: flex;
+    list-style: none;
+    text-transform: lowercase;
+
+    li {
+      margin-left: 62px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

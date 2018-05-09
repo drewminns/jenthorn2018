@@ -1,0 +1,41 @@
+.Highlight {
+  &__lead,
+  &__title {
+    display: block;
+  }
+
+  &__link {
+    color: $green;
+    text-decoration: none;
+    font-family: $sansSerif;
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-left: 10px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    &-item {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 30px;
+
+      &::before {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        display: block;
+        width: 10px;
+        height: 10px;
+        content: '';
+        border-radius: 50%;
+        border: 2px solid $red;
+      }
+    }
+  }
+}

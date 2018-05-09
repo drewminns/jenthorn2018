@@ -1,0 +1,11 @@
+.Header {
+  padding: 60px 0;
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__Logo {
+    font-size: 0;
+  }
+}

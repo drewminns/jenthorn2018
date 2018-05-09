@@ -1,0 +1,50 @@
+.Process {
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    margin-top: 100px;
+    counter-reset: grid;
+  }
+
+  &__item {
+    &::before {
+      counter-increment: grid;
+      content: counter(grid);
+      position: absolute;
+      z-index: -1;
+      line-height: 1;
+      top: -50px;
+      left: -50px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      @include rem(font-size, 288px);
+      color: rgba(253, 253, 220, 0.4);
+      letter-spacing: 0.72px;
+    }
+
+    @include md {
+      margin-bottom: 200px;
+      display: flex;
+      align-items: flex-start;
+    }
+    position: relative;
+
+    &:nth-child(odd) {
+      top: -200px;
+      margin-left: 8.3333%;
+
+      &::before {
+        top: -100px;
+        left: -50px;
+      }
+    }
+
+    &-content {
+      margin-left: 26px;
+
+      p.h4 {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

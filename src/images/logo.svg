@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="130px" height="19px" viewBox="0 0 130 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-10" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="styleguide" transform="translate(-97.000000, -923.000000)">
+            <g id="logo" transform="translate(98.000000, 919.000000)">
+                <g>
+                    <text id="Jen-Thorn" font-family="Cabin-Bold, Cabin" font-size="20" font-weight="bold" line-spacing="23" fill="#222222">
+                        <tspan x="11" y="19">Jen Thorn</tspan>
+                    </text>
+                    <g id="rose-icon" transform="translate(119.000000, 13.500000) rotate(90.000000) translate(-119.000000, -13.500000) translate(111.000000, 4.000000)" fill="#3B98B5" fill-rule="nonzero">
+                        <path d="M0.0542918587,7.1309375 L0.0542918587,11.0136667 C0.0542918587,14.9937708 3.10118177,18.2593958 6.92124936,18.470375 L6.92124936,14.5836875 C6.92124936,10.6039792 3.8747445,7.34191667 0.0542918587,7.1309375 Z" id="Shape"></path>
+                        <path d="M15.3476539,11.0136667 L15.3476539,7.1309375 C11.5275863,7.34191667 8.48069636,10.6035833 8.48069636,14.5836875 L8.48069636,18.470375 C12.300764,18.2593958 15.3476539,14.9937708 15.3476539,11.0136667 Z" id="Shape"></path>
+                        <path d="M11.5645509,6.10177083 C11.1225151,2.61685417 8.45066257,0.523291667 7.70097286,1.42108547e-14 C6.94704762,0.523291667 4.27558013,2.61685417 3.83739478,6.10177083 C5.65674962,7.10402083 7.05370609,8.80372917 7.70097286,10.8486042 C8.34823963,8.80372917 9.74519611,7.10402083 11.5645509,6.10177083 Z" id="Shape"></path>
+                    </g>
+                    <path d="M100,13 L105,13" id="Line" stroke="#3B98B5" stroke-linecap="square"></path>
+                    <path d="M0,13 L5,13" id="Line-Copy" stroke="#3B98B5" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+.Footer {
+  padding: 81px 0 60px;
+
+  &__nav,
+  &__social {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__nav {
+    li {
+      margin-bottom: 18px;
+    }
+    a {
+      color: $black;
+      font-family: $sansSerif;
+    }
+  }
+}
