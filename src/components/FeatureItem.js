@@ -1,32 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FeatureItem = ({
-  title = '',
-  meta = '',
-  content = '',
-  image = null,
-  imageAlt = '',
-  isPortfolio = true,
-  link = '#',
-}) => (
-    <div>
-      <h3>
-        <a href={link}>{title}</a>
-      </h3>
-      <div>
-        {isPortfolio ? (
-          <div>{meta} -</div>
-        ) : (
-            <div>
-              <img src={image} alt={imageAlt} />
-            </div>
-          )}
-
-        <div dangerouslySetInnerHTML={{ __html: content }} />
-      </div>
+const FeatureItem = ({ title = '', meta = '', content = '', link = '#' }) => (
+  <div className="FeatureItem">
+    <h3 className="FeatureItem__title h2">
+      <a href={link}>{title}</a>
+    </h3>
+    <div className="FeatureItem__details">
+      <p className="FeatureItem__type">{meta} -</p>
+      <p className="FeatureItem__copy">{content}</p>
     </div>
-  );
+  </div>
+);
 
 FeatureItem.propTypes = {
   title: PropTypes.string,

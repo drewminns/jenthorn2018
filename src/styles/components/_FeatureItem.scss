@@ -1,0 +1,21 @@
+.FeatureItem {
+  border-bottom: 1px solid $grey3;
+  padding-bottom: 25px;
+
+  &__title {
+    a {
+      color: $black;
+    }
+  }
+
+  &__details {
+    display: flex;
+  }
+
+  &__type {
+    font-family: $sansSerif;
+    color: $red;
+    width: 160px;
+    margin-right: 25px;
+  }
+}

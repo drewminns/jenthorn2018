@@ -3,39 +3,53 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    margin-top: 100px;
     counter-reset: grid;
+    margin-top: 50px;
+
+    @include md {
+      margin-top: 180px;
+    }
   }
 
   &__item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    position: relative;
+
     &::before {
       counter-increment: grid;
       content: counter(grid);
       position: absolute;
       z-index: -1;
       line-height: 1;
-      top: -50px;
-      left: -50px;
+      top: -40px;
+      left: 50px;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      @include rem(font-size, 288px);
-      color: rgba(253, 253, 220, 0.4);
+      @include rem(font-size, 120px);
+      color: rgba(204, 204, 0, 0.1);
       letter-spacing: 0.72px;
+
+      @include md {
+        @include rem(font-size, 288px);
+        top: -50px;
+        left: -50px;
+      }
     }
 
     @include md {
       margin-bottom: 200px;
-      display: flex;
-      align-items: flex-start;
     }
-    position: relative;
 
     &:nth-child(odd) {
-      top: -200px;
-      margin-left: 8.3333%;
+      @include md {
+        top: -200px;
+        margin-left: 8.3333%;
 
-      &::before {
-        top: -100px;
-        left: -50px;
+        &::before {
+          top: -100px;
+          left: -50px;
+        }
       }
     }
 

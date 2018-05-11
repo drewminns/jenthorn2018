@@ -7,6 +7,18 @@
     padding: 0;
   }
 
+  &__social {
+    display: flex;
+
+    li {
+      @include rem(font-size, 20px);
+      margin-right: 10px;
+      a {
+        color: $green;
+      }
+    }
+  }
+
   &__nav {
     li {
       margin-bottom: 18px;

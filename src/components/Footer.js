@@ -1,6 +1,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
+import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram';
+import faMail from '@fortawesome/fontawesome-free-solid/faEnvelope';
 const Footer = ({ data }) => {
   return (
     <footer className="Footer">
@@ -9,7 +13,7 @@ const Footer = ({ data }) => {
           <div className="col-md-3 offset-md-1">
             <ul className="Footer__nav">
               <li>
-                <Link to="/work">Work</Link>
+                <Link to="/#work">Work</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>
@@ -17,13 +21,19 @@ const Footer = ({ data }) => {
             </ul>
             <ul className="Footer__social">
               <li>
-                <a href="#">Twitter</a>
+                <a href="https://twitter.com/jenthorn_">
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
               </li>
               <li>
-                <a href="#">Instagram</a>
+                <a href="https://www.instagram.com/jenthorn_/">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
               </li>
               <li>
-                <a href="#">Mail</a>
+                <a href="mailto:hello@jenthorn.ca">
+                  <FontAwesomeIcon icon={faMail} />
+                </a>
               </li>
             </ul>
           </div>

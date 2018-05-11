@@ -11,7 +11,6 @@ const IndexPage = ({ data }) => {
   const process = data.contentfulProcess;
   const highlight = data.contentfulHomepageHighlight;
   const work = data.allContentfulWork.edges;
-
   return (
     <div>
       <Intro
@@ -19,18 +18,29 @@ const IndexPage = ({ data }) => {
         paragraph={intro.paragraph.paragraph}
         backgroundImage={intro.backgroundImage}
       />
-      <h2 className="red" id="work">
-        Work
-      </h2>
-      {work.map((node, i) => (
-        <FeatureItem
-          key={node.node.slug}
-          title={node.node.title.title}
-          meta={node.node.typeOfWork}
-          content={node.node.brief.brief}
-          link={node.node.slug}
-        />
-      ))}
+      <div className="container">
+        <div className="row">
+          <div className="Index__work cf">
+            <div className="col-md-12">
+              <h2 id="work" className="Index__work-title red">
+                Work
+              </h2>
+            </div>
+            {work.map((node, i) => (
+              <div className="col-md-8 offset-md-2" key={node.node.slug}>
+                <FeatureItem
+                  key={node.node.slug}
+                  title={node.node.title.title}
+                  meta={node.node.typeOfWork}
+                  content={node.node.brief.brief}
+                  link={node.node.slug}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <Process
         lead={process.lead}
         title={process.title}
@@ -38,6 +48,7 @@ const IndexPage = ({ data }) => {
         processItems={process.processItem}
       />
       <Highlight
+        backgroundImage={highlight.backgroundImage.file.url}
         lead={highlight.lead.lead}
         title={highlight.title.title}
         link={highlight.featureLink}
@@ -92,6 +103,12 @@ export const query = graphql`
       featureLink
       featureText
       items
+      backgroundImage {
+        id
+        file {
+          url
+        }
+      }
     }
     contentfulProcess {
       title

@@ -1,0 +1,67 @@
+.About {
+  &__content {
+  }
+  &__contentSection {
+    margin: 25px 0 50px;
+    @include md {
+      margin: 100px 0;
+    }
+  }
+
+  &__experience {
+    &-item {
+      margin-bottom: 10px;
+    }
+
+    &-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      font-family: $sansSerif;
+      line-height: 1.5;
+
+      li {
+        margin-bottom: 25px;
+      }
+    }
+
+    &-content {
+      font-weight: 700;
+      display: block;
+      @include rem(font-size, 18px);
+      margin-bottom: 10px;
+    }
+  }
+
+  &__contact {
+    margin: 50px 0;
+
+    @include md {
+      margin: 25px 0;
+    }
+
+    h3 {
+      margin: 10px 0 10px;
+    }
+
+    a {
+      font-family: $sansSerif;
+      color: $green;
+      @include rem(font-size, 36px);
+    }
+  }
+
+  &__fact {
+    &-item {
+      background-repeat: no-repeat;
+      background-size: auto 80px;
+      padding-left: 100px;
+      margin-bottom: 40px;
+
+      @include md {
+        background-size: auto 110px;
+        padding-left: 170px;
+      }
+    }
+  }
+}

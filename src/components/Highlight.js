@@ -3,8 +3,18 @@ import Link from 'gatsby-link';
 
 import Arrow from '../images/arrow.svg';
 
-const Highlight = ({ lead, title, link, linkText, listItems = [] }) => (
-  <div className="Highlight">
+const Highlight = ({
+  lead,
+  title,
+  link,
+  linkText,
+  listItems = [],
+  backgroundImage = '',
+}) => (
+  <div
+    className="Highlight"
+    style={{ backgroundImage: `url(${backgroundImage})` }}
+  >
     <div className="container">
       <div className="row">
         <div className="col-md-11 offset-md-1">

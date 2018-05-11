@@ -13,7 +13,7 @@ const Layout = ({ children, data }) => (
       link={[
         {
           href:
-            '//fonts.googleapis.com/css?family=Cabin:700,400i|Merriweather:700,400',
+            '//fonts.googleapis.com/css?family=Cabin:700,400i|PT+Serif:400,400i,700,700i',
           rel: 'stylesheet',
           type: 'text/css',
         },

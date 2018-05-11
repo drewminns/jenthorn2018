@@ -1,4 +1,14 @@
 .Highlight {
+  background-repeat: no-repeat;
+  padding: 25px 0 80px;
+  background-size: cover;
+  background-position: -20%;
+
+  @include md {
+    background-size: contain;
+    background-position: 90%;
+  }
+
   &__lead,
   &__title {
     display: block;

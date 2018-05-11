@@ -3,9 +3,16 @@
     display: flex;
     list-style: none;
     text-transform: lowercase;
+    flex-direction: column;
+
+    @include md {
+      flex-direction: row;
+    }
 
     li {
-      margin-left: 62px;
+      @include md {
+        margin-left: 62px;
+      }
     }
 
     a {

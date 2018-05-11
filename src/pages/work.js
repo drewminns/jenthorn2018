@@ -7,7 +7,6 @@ import WorkFull from '../components/work/WorkFull';
 import WorkImage from '../components/work/WorkImage';
 
 const WorkPage = props => {
-  console.log(props);
   const work = props.data.contentfulWork;
   return (
     <div className="WorkPage">
@@ -16,20 +15,28 @@ const WorkPage = props => {
         <div className="row">
           {work.problemContent && (
             <div className="col-md-8">
-              <ReactMarkdown source={work.problemContent.problemContent} />
+              <ReactMarkdown
+                source={work.problemContent.problemContent}
+                className="WorkPage__content"
+              />
             </div>
           )}
           {work.problemImage && (
-            <WorkImage
-              url={work.problemImage.file.url}
-              alt={work.problemImage.description}
-              caption={work.problemImageCaption}
-            />
+            <div className="col-md-12">
+              <WorkImage
+                url={work.problemImage.file.url}
+                alt={work.problemImage.description}
+                caption={work.problemImageCaption}
+              />
+            </div>
           )}
 
-          {work.problemContent && (
+          {work.processContent && (
             <div className="col-md-8">
-              <ReactMarkdown source={work.problemContent.problemContent} />
+              <ReactMarkdown
+                source={work.processContent.processContent}
+                className="WorkPage__content"
+              />
             </div>
           )}
           {work.processImage && (
@@ -43,12 +50,16 @@ const WorkPage = props => {
             <div className="col-md-8">
               <ReactMarkdown
                 source={work.processDetailContent.processDetailContent}
+                className="WorkPage__content"
               />
             </div>
           )}
           {work.solutionContent && (
             <div className="col-md-8">
-              <ReactMarkdown source={work.solutionContent.solutionContent} />
+              <ReactMarkdown
+                source={work.solutionContent.solutionContent}
+                className="WorkPage__content"
+              />
             </div>
           )}
           {work.futureConsiderationsContent && (
@@ -57,6 +68,7 @@ const WorkPage = props => {
                 source={
                   work.futureConsiderationsContent.futureConsiderationsContent
                 }
+                className="WorkPage__content"
               />
             </div>
           )}

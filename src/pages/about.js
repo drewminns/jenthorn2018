@@ -10,7 +10,6 @@ const AboutPage = ({ data }) => {
   const skills = data.allContentfulProfessionalSkills.edges;
   const content = data.contentfulAboutContent;
   const intro = data.contentfulAboutIntro;
-
   return (
     <div>
       <Intro
@@ -27,7 +26,9 @@ const AboutPage = ({ data }) => {
           </div>
           <div className="row">
             <div className="col-md-6 offset-md-2">
-              <ReactMarkdown source={content.contentSection.contentSection} />
+              <div className="About__contentSection">
+                <ReactMarkdown source={content.contentSection.contentSection} />
+              </div>
             </div>
           </div>
         </div>
@@ -38,44 +39,60 @@ const AboutPage = ({ data }) => {
             {experience.length && (
               <div className="About__experience-item col-md-4">
                 <p className="h2 red">Experience</p>
-                {experience.map((node, i) => (
-                  <div key={i}>
-                    <p>{node.node.title}</p>
-                    <p>{node.node.time}</p>
-                  </div>
-                ))}
+                <ul className="About__experience-list">
+                  {experience.map((node, i) => (
+                    <li key={i}>
+                      <span className="About__experience-content">
+                        {node.node.title}
+                      </span>
+                      <span>{node.node.time}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
 
             {skills.length && (
               <div className="About__experience-item col-md-4">
                 <p className="h2 red">Professional Skills</p>
-                {skills.map((node, i) => (
-                  <div key={i}>
-                    <p>{node.node.title}</p>
-                    <p>{node.node.content.content}</p>
-                  </div>
-                ))}
+                <ul className="About__experience-list">
+                  {skills.map((node, i) => (
+                    <li key={i}>
+                      <span className="About__experience-content">
+                        {node.node.title}
+                      </span>
+                      <span>{node.node.content.content}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
 
             {education.length && (
               <div className="About__experience-item col-md-4">
                 <p className="h2 red">Education</p>
-                {education.map((node, i) => (
-                  <div key={i}>
-                    <p>{node.node.title}</p>
-                    <p>{node.node.timing}</p>
-                  </div>
-                ))}
+                <ul className="About__experience-list">
+                  {education.map((node, i) => (
+                    <li key={i}>
+                      <span className="About__experience-content">
+                        {node.node.title}
+                      </span>
+                      <span>{node.node.timing}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
-            <div className="col-md-12">
-              <p className="h2 red">Contact</p>
-              <p>
-                <a href="mailto:hello@jenthorn.ca">hello@jenthorn.ca</a>
-              </p>
-              <p>Please email me! I'd love to hear from you!</p>
+          </div>
+          <div className="About__contact cf">
+            <div className="row">
+              <div className="col-md-12">
+                <h3 className="h2 red">Contact</h3>
+                <p>
+                  <a href="mailto:hello@jenthorn.ca">hello@jenthorn.ca</a>
+                </p>
+                <p>Please email me! I'd love to hear from you!</p>
+              </div>
             </div>
           </div>
         </div>
@@ -91,6 +108,9 @@ const AboutPage = ({ data }) => {
                 <div
                   key={node.node.id}
                   className="col-md-10 offset-md-1 About__fact-item"
+                  style={{
+                    backgroundImage: `url(${node.node.image.file.url})`,
+                  }}
                 >
                   <p className="h2">{node.node.title}</p>
                   <p>{node.node.content.content}</p>
@@ -131,6 +151,13 @@ export const query = graphql`
           content {
             id
             content
+          }
+          image {
+            id
+            title
+            file {
+              url
+            }
           }
         }
       }
