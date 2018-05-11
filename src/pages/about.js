@@ -10,7 +10,7 @@ const AboutPage = ({ data }) => {
   const skills = data.allContentfulProfessionalSkills.edges;
   const content = data.contentfulAboutContent;
   const intro = data.contentfulAboutIntro;
-  console.log(facts);
+
   return (
     <div>
       <Intro

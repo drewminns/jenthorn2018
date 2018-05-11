@@ -6,9 +6,9 @@ import WorkTitle from '../components/work/WorkTitle';
 import WorkFull from '../components/work/WorkFull';
 import WorkImage from '../components/work/WorkImage';
 
-const WorkPage = ({ data }) => {
-  const work = data.contentfulWork;
-
+const WorkPage = props => {
+  console.log(props);
+  const work = props.data.contentfulWork;
   return (
     <div className="WorkPage">
       <WorkTitle title={work.title.title} description={work.brief.brief} />
@@ -72,7 +72,7 @@ const WorkPage = ({ data }) => {
 export default WorkPage;
 
 export const query = graphql`
-  query blogPostQuery($slug: String!) {
+  query blogPostQuery($slug: String) {
     contentfulWork(slug: { eq: $slug }) {
       title {
         title
