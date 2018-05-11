@@ -34,7 +34,7 @@ html {
 
 body {
   font-family: $serif;
-  @include rem(font-size, 16px);
+  @include rem(font-size, 15px);
   color: $black;
 }
 

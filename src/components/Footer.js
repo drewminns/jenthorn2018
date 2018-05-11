@@ -33,7 +33,7 @@ const Footer = ({ data }) => {
               className="h2"
             />
             <p className="h2">
-              <a href={data.featureLink} className="red">
+              <a href={data.resume.file.url} className="red" download>
                 {data.featureText}
               </a>
             </p>
@@ -45,15 +45,3 @@ const Footer = ({ data }) => {
 };
 
 export default Footer;
-
-export const query = graphql`
-  query FooterContent {
-    contentfulFooter {
-      featureText
-      featureLink
-      content {
-        content
-      }
-    }
-  }
-`;

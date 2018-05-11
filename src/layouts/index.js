@@ -44,9 +44,16 @@ export const query = graphql`
     }
     contentfulFooter {
       featureText
-      featureLink
       content {
         content
+      }
+      resume {
+        id
+        file {
+          url
+          fileName
+          contentType
+        }
       }
     }
   }

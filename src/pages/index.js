@@ -6,12 +6,11 @@ import FeatureItem from '../components/FeatureItem';
 import Process from '../components/Process';
 import Highlight from '../components/Highlight';
 
-const items = [];
-
 const IndexPage = ({ data }) => {
   const intro = data.contentfulHomepageIntro;
   const process = data.contentfulProcess;
   const highlight = data.contentfulHomepageHighlight;
+  const work = data.allContentfulWork.edges;
 
   return (
     <div>
@@ -20,14 +19,16 @@ const IndexPage = ({ data }) => {
         paragraph={intro.paragraph.paragraph}
         backgroundImage={intro.backgroundImage}
       />
-      <h2 className="red">Work</h2>
-      {items.map((node, i) => (
+      <h2 className="red" id="work">
+        Work
+      </h2>
+      {work.map((node, i) => (
         <FeatureItem
-          key={i}
-          title={node.title}
-          meta={node.meta}
-          content={node.content}
-          link={node.link}
+          key={node.node.slug}
+          title={node.node.title.title}
+          meta={node.node.typeOfWork}
+          content={node.node.brief.brief}
+          link={node.node.slug}
         />
       ))}
       <Process
@@ -63,6 +64,21 @@ export const query = graphql`
           url
           fileName
           contentType
+        }
+      }
+    }
+    allContentfulWork {
+      edges {
+        node {
+          slug
+          title {
+            title
+          }
+          brief {
+            brief
+          }
+          typeOfWork
+          id
         }
       }
     }

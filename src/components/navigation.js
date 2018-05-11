@@ -5,7 +5,7 @@ const Navigation = () => (
   <nav className="Navigation">
     <ul className="Navigation__list">
       <li>
-        <Link to="/work" className="h5">
+        <Link to="/#work" className="h5">
           Work
         </Link>
       </li>
