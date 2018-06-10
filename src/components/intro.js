@@ -3,10 +3,10 @@ import Link from 'gatsby-link';
 
 const Intro = ({ title, paragraph, backgroundImage = '' }) => {
   const background = backgroundImage
-    ? { backgroundImage: `url(${backgroundImage.file})` }
+    ? { backgroundImage: `url(${backgroundImage.file.url})` }
     : null;
   return (
-    <div className="Intro" style={background}>
+    <div className="IntroHome" style={background}>
       <div className="container">
         <div className="row">
           <div className="col-md-8">

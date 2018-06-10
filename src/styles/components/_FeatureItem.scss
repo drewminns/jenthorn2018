@@ -12,10 +12,20 @@
     display: flex;
   }
 
+  &__link a {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-left: 10px;
+    }
+  }
+
   &__type {
     font-family: $sansSerif;
     color: $red;
-    width: 160px;
-    margin-right: 25px;
+    width: 190px;
+    margin-right: 15px;
+    line-height: 1.5;
   }
 }

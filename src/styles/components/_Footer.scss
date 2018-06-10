@@ -1,5 +1,7 @@
 .Footer {
   padding: 81px 0 60px;
+  background-color: white;
+  background-image: url(../images/footer-grid.jpg);
 
   &__nav,
   &__social {
@@ -12,7 +14,8 @@
 
     li {
       @include rem(font-size, 20px);
-      margin-right: 10px;
+      margin-right: 25px;
+
       a {
         color: $green;
       }
@@ -26,6 +29,7 @@
     a {
       color: $black;
       font-family: $sansSerif;
+      font-weight: 700;
     }
   }
 }

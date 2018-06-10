@@ -18,39 +18,16 @@ const WorkPage = props => {
               <ReactMarkdown
                 source={work.problemContent.problemContent}
                 className="WorkPage__content"
+                escapeHtml={false}
               />
             </div>
           )}
-          {work.problemImage && (
-            <div className="col-md-12">
-              <WorkImage
-                url={work.problemImage.file.url}
-                alt={work.problemImage.description}
-                caption={work.problemImageCaption}
-              />
-            </div>
-          )}
-
-          {work.processContent && (
+          {work.approachContent && (
             <div className="col-md-8">
               <ReactMarkdown
-                source={work.processContent.processContent}
+                source={work.approachContent.approachContent}
                 className="WorkPage__content"
-              />
-            </div>
-          )}
-          {work.processImage && (
-            <WorkImage
-              url={work.processImage.file.url}
-              alt={work.processImage.description}
-              caption={work.processImageCaption}
-            />
-          )}
-          {work.processDetailContent && (
-            <div className="col-md-8">
-              <ReactMarkdown
-                source={work.processDetailContent.processDetailContent}
-                className="WorkPage__content"
+                escapeHtml={false}
               />
             </div>
           )}
@@ -59,6 +36,7 @@ const WorkPage = props => {
               <ReactMarkdown
                 source={work.solutionContent.solutionContent}
                 className="WorkPage__content"
+                escapeHtml={false}
               />
             </div>
           )}
@@ -69,6 +47,7 @@ const WorkPage = props => {
                   work.futureConsiderationsContent.futureConsiderationsContent
                 }
                 className="WorkPage__content"
+                escapeHtml={false}
               />
             </div>
           )}
@@ -98,34 +77,8 @@ export const query = graphql`
       problemContent {
         problemContent
       }
-      problemImage {
-        id
-        description
-        file {
-          url
-          fileName
-          contentType
-        }
-      }
-      problemImageCaption
       approachContent {
         approachContent
-      }
-      processContent {
-        processContent
-      }
-      processImage {
-        id
-        description
-        file {
-          url
-          fileName
-          contentType
-        }
-      }
-      processImageCaption
-      processDetailContent {
-        processDetailContent
       }
       solutionContent {
         solutionContent

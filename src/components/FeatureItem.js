@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Arrow from '../images/arrow.svg';
+import Link from 'gatsby-link';
 
 const FeatureItem = ({ title = '', meta = '', content = '', link = '#' }) => (
   <div className="FeatureItem">
@@ -8,8 +10,16 @@ const FeatureItem = ({ title = '', meta = '', content = '', link = '#' }) => (
     </h3>
     <div className="FeatureItem__details">
       <p className="FeatureItem__type">{meta} -</p>
-      <p className="FeatureItem__copy">{content}</p>
+      <div>
+        <p className="FeatureItem__copy">{content}</p>
+        <p className="FeatureItem__link">
+          <Link className="green" to={link}>
+            View Project <img src={Arrow} />
+          </Link>
+        </p>
+      </div>
     </div>
+    <p />
   </div>
 );
 

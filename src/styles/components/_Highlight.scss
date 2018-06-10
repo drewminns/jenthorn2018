@@ -2,11 +2,36 @@
   background-repeat: no-repeat;
   padding: 25px 0 80px;
   background-size: cover;
-  background-position: -20%;
+  background-position: 20%;
+  position: relative;
+
+  &::before {
+    z-index: 1;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include sm {
+    background-position: 0;
+  }
 
   @include md {
-    background-size: contain;
-    background-position: 90%;
+    background-position: center;
   }
 
   &__lead,

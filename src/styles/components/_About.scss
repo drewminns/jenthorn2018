@@ -25,11 +25,16 @@
       }
     }
 
+    &-details {
+      font-family: $serif;
+      @include rem(font-size, 16px);
+    }
+
     &-content {
       font-weight: 700;
       display: block;
       @include rem(font-size, 18px);
-      margin-bottom: 10px;
+      margin-bottom: 1px;
     }
   }
 

@@ -13,11 +13,7 @@ const IndexPage = ({ data }) => {
   const work = data.allContentfulWork.edges;
   return (
     <div>
-      <Intro
-        title={intro.title.title}
-        paragraph={intro.paragraph.paragraph}
-        backgroundImage={intro.backgroundImage}
-      />
+      <Intro title={intro.title.title} paragraph={intro.paragraph.paragraph} />
       <div className="container">
         <div className="row">
           <div className="Index__work cf">
@@ -51,7 +47,7 @@ const IndexPage = ({ data }) => {
         backgroundImage={highlight.backgroundImage.file.url}
         lead={highlight.lead.lead}
         title={highlight.title.title}
-        link={highlight.featureLink}
+        link={'/about'}
         linkText={highlight.featureText}
         listItems={highlight.items}
       />
@@ -69,13 +65,6 @@ export const query = graphql`
       }
       paragraph {
         paragraph
-      }
-      backgroundImage {
-        file {
-          url
-          fileName
-          contentType
-        }
       }
     }
     allContentfulWork {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
+import { navigateTo } from 'gatsby-link';
 
 import Navigation from './navigation';
 
@@ -13,14 +13,18 @@ class Header extends Component {
   };
 
   handleMenuOpen = e => {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
     this.setState({
       menuOpen: true,
     });
   };
 
-  handleMenuClose = () => {
-    e.preventDefault();
+  handleMenuClose = e => {
+    if (e) {
+      e.preventDefault();
+    }
     this.setState({
       menuOpen: false,
     });
@@ -32,25 +36,20 @@ class Header extends Component {
     if (this.state.menuOpen) {
       navClass = 'Header__nav Header__nav--active';
     }
-
     return (
       <header className="Header">
         <div className="container">
           <div className="row">
             <div className="col-md-12 Header__row">
               <h1 className="Header__Logo">
-                <Link to="/">
+                <div className="link" onClick={() => navigateTo('/')}>
                   <img src={Logo} alt="" />
                   <span>{this.props.siteTitle}</span>
-                </Link>
+                </div>
               </h1>
-              <a
-                className="Header__menu"
-                href="#"
-                onClick={this.handleMenuOpen}
-              >
+              <button className="Header__menu" onClick={this.handleMenuOpen}>
                 Open Menu
-              </a>
+              </button>
               <div className={navClass}>
                 <a
                   className="Header__close"
@@ -59,7 +58,10 @@ class Header extends Component {
                 >
                   Close Menu
                 </a>
-                <Navigation />
+                <Navigation
+                  closeNav={this.handleMenuClose}
+                  resume={this.props.resume.file.url}
+                />
               </div>
             </div>
           </div>

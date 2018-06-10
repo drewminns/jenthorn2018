@@ -7,7 +7,7 @@ import faInstagram from '@fortawesome/fontawesome-free-brands/faInstagram';
 import faMail from '@fortawesome/fontawesome-free-solid/faEnvelope';
 const Footer = ({ data }) => {
   return (
-    <footer className="Footer">
+    <footer className="Footer" id="contact">
       <div className="container">
         <div className="row">
           <div className="col-md-3 offset-md-1">

@@ -25,7 +25,7 @@ const Highlight = ({
         </div>
       </div>
       <div className="row">
-        <div className="col-md-6 offset-md-2">
+        <div className="col-md-6 offset-md-2 col-xs-8">
           {listItems.length > 0 && (
             <ul className="Highlight__list">
               {listItems.map((node, i) => (

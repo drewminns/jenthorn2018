@@ -1,10 +1,45 @@
 .WorkPage {
   &__content {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 
     h3 {
       color: $red;
       @include rem(font-size, 28px);
+    }
+
+    ul li {
+      margin-bottom: 21px;
+    }
+
+    a {
+      color: $green;
+    }
+
+    .media {
+      position: relative;
+
+      img {
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 25px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    blockquote {
+      font-style: italic;
+      margin: 0;
+      color: #888;
+      margin: 15px 0 15px 25px;
+      line-height: 1.7;
+
+      p {
+        line-height: 1.4;
+      }
     }
   }
 }

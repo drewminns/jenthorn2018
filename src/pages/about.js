@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Link from 'gatsby-link';
 import ReactMarkdown from 'react-markdown';
-import Intro from '../components/intro';
+import IntroAbout from '../components/introAbout';
 
 const AboutPage = ({ data }) => {
   const education = data.allContentfulEducation.edges;
@@ -12,10 +12,10 @@ const AboutPage = ({ data }) => {
   const intro = data.contentfulAboutIntro;
   return (
     <div>
-      <Intro
+      <IntroAbout
         title={intro.title}
         paragraph={intro.paragraph.paragraph}
-        backgroundImage={''}
+        backgroundImage={intro.backgroundImage}
       />
       <div className="About__content">
         <div className="container">
@@ -45,7 +45,9 @@ const AboutPage = ({ data }) => {
                       <span className="About__experience-content">
                         {node.node.title}
                       </span>
-                      <span>{node.node.time}</span>
+                      <span className="About__experience-details">
+                        {node.node.time}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -61,7 +63,9 @@ const AboutPage = ({ data }) => {
                       <span className="About__experience-content">
                         {node.node.title}
                       </span>
-                      <span>{node.node.content.content}</span>
+                      <span className="About__experience-details">
+                        {node.node.content.content}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -77,7 +81,9 @@ const AboutPage = ({ data }) => {
                       <span className="About__experience-content">
                         {node.node.title}
                       </span>
-                      <span>{node.node.timing}</span>
+                      <span className="About__experience-details">
+                        {node.node.timing}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -133,6 +139,12 @@ export const query = graphql`
       paragraph {
         id
         paragraph
+      }
+      backgroundImage {
+        id
+        file {
+          url
+        }
       }
     }
     contentfulAboutContent {
