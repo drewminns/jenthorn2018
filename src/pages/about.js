@@ -11,7 +11,7 @@ const AboutPage = ({ data }) => {
   const content = data.contentfulAboutContent;
   const intro = data.contentfulAboutIntro;
   return (
-    <div>
+    <div className="Page-section">
       <IntroAbout
         title={intro.title}
         paragraph={intro.paragraph.paragraph}
@@ -108,7 +108,7 @@ const AboutPage = ({ data }) => {
           <div className="container">
             <div className="row">
               <div className="col-md-10 offset-md-1">
-                <h3 className="h2 red">Facts</h3>
+                <h3 className="h2 red About__fact-title">Facts</h3>
               </div>
               {facts.map((node, i) => (
                 <div

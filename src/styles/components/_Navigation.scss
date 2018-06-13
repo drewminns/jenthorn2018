@@ -1,8 +1,15 @@
 .Navigation {
+  &__email {
+    padding-top: 30px;
+    a {
+      @include rem(font-size, 30px);
+      display: inline-block;
+    }
+  }
+
   &__list {
     display: flex;
     list-style: none;
-    text-transform: lowercase;
     flex-direction: column;
 
     @include md {
@@ -17,6 +24,15 @@
 
     a {
       text-decoration: none;
+    }
+
+    .link {
+      @include rem(font-size, 40px);
+      letter-spacing: 0.5px;
+
+      @include md {
+        @include rem(font-size, 20px);
+      }
     }
   }
 }

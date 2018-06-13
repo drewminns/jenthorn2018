@@ -9,7 +9,7 @@ const IntroAbout = ({ title, paragraph, backgroundImage = '' }) => {
     <div className="Intro" style={background}>
       <div className="container">
         <div className="row">
-          <div className="col-md-5 col-xs-8">
+          <div className="col-md-8 col-xs-8">
             <h2 className="red">{title}</h2>
             <p className="h2">{paragraph}</p>
           </div>

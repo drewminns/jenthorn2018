@@ -9,7 +9,7 @@ import WorkImage from '../components/work/WorkImage';
 const WorkPage = props => {
   const work = props.data.contentfulWork;
   return (
-    <div className="WorkPage">
+    <div className="WorkPage Page-section">
       <WorkTitle title={work.title.title} description={work.brief.brief} />
       <div className="container">
         <div className="row">
@@ -51,11 +51,16 @@ const WorkPage = props => {
               />
             </div>
           )}
+          {work.bottomFullImage && (
+            <div className="col-md-8 workImage">
+              <img
+                src={work.bottomFullImage.file.url}
+                alt={work.bottomFullImage.file.fileName}
+              />
+            </div>
+          )}
         </div>
       </div>
-      {work.bottomFullImage && (
-        <WorkFull backgroundImage={work.bottomFullImage.file.url} />
-      )}
     </div>
   );
 };

@@ -19,7 +19,6 @@ const FeatureItem = ({ title = '', meta = '', content = '', link = '#' }) => (
         </p>
       </div>
     </div>
-    <p />
   </div>
 );
 

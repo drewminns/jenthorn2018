@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
   const highlight = data.contentfulHomepageHighlight;
   const work = data.allContentfulWork.edges;
   return (
-    <div>
+    <div className="Page-section">
       <Intro title={intro.title.title} paragraph={intro.paragraph.paragraph} />
       <div className="container">
         <div className="row">

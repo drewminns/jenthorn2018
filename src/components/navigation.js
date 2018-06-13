@@ -48,18 +48,11 @@ const Navigation = ({ closeNav, resume }) => (
         <div className="Navigation__contact-element">
           <div className="row">
             <div className="col-md-11 offset md-1">
-              <p className="red h5">Oh Hello! 👋</p>
-              <p className="red h5">
-                I’m looking forward to connecting with you!
-              </p>
-              <p className="green h5">
+              <p className="red h4">Oh Hello! 👋</p>
+              <p className="h4">I’m looking forward to connecting with you!</p>
+              <p className="green h4 Navigation__email">
                 <a href="mailto:hello@jenthorn.ca" className="green">
                   hello@jenthorn.ca
-                </a>
-              </p>
-              <p className="green h5">
-                <a href="tel:+6475243279" className="green">
-                  647.524.3279
                 </a>
               </p>
               <ul className="Navigation__social">
@@ -71,11 +64,6 @@ const Navigation = ({ closeNav, resume }) => (
                 <li>
                   <a href="https://www.instagram.com/jenthorn_/">
                     <FontAwesomeIcon icon={faInstagram} />
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:hello@jenthorn.ca">
-                    <FontAwesomeIcon icon={faMail} />
                   </a>
                 </li>
               </ul>

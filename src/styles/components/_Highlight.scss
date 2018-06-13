@@ -2,8 +2,12 @@
   background-repeat: no-repeat;
   padding: 25px 0 80px;
   background-size: cover;
-  background-position: 20%;
+  background-position: 40%;
   position: relative;
+
+  @include md {
+    background-position: 20%;
+  }
 
   &::before {
     z-index: 1;
