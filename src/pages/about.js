@@ -108,7 +108,9 @@ const AboutPage = ({ data }) => {
           <div className="container">
             <div className="row">
               <div className="col-md-10 offset-md-1">
-                <h3 className="h2 red About__fact-title">Facts</h3>
+                <h3 className="h2 red About__fact-title">
+                  Fun Jen Thorn facts
+                </h3>
               </div>
               {facts.map((node, i) => (
                 <div
